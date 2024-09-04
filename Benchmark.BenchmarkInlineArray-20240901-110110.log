@@ -1,0 +1,110 @@
+// * Summary *
+
+BenchmarkDotNet v0.13.12, Windows 11 (10.0.22631.4112/23H2/2023Update/SunValley3)
+AMD Ryzen 5 3500U with Radeon Vega Mobile Gfx, 1 CPU, 8 logical and 4 physical cores
+.NET SDK 8.0.203
+  [Host]     : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+  Job-FGEYFK : .NET 8.0.3 (8.0.324.11423), X64 RyuJIT AVX2
+
+IterationCount=25  
+
+| Method               | Mean           | Error         | StdDev        | Allocated |
+|--------------------- |---------------:|--------------:|--------------:|----------:|
+| InlineArray10        |       3.570 ns |     0.1291 ns |     0.1723 ns |         - |
+| InlineArray20        |      12.486 ns |     0.2129 ns |     0.2768 ns |         - |
+| InlineArray30        |      10.286 ns |     0.2812 ns |     0.3656 ns |         - |
+| InlineArray40        |      23.557 ns |     0.4684 ns |     0.6091 ns |         - |
+| InlineArray50        |      26.876 ns |     0.9164 ns |     1.1254 ns |         - |
+| InlineArray60        |      35.590 ns |     1.0318 ns |     1.3774 ns |         - |
+| InlineArray70        |      40.459 ns |     0.8901 ns |     1.1882 ns |         - |
+| InlineArray80        |      43.325 ns |     0.9033 ns |     1.1745 ns |         - |
+| InlineArray90        |      46.548 ns |     0.8341 ns |     1.1135 ns |         - |
+| InlineArray100       |      54.213 ns |     1.7572 ns |     2.1580 ns |         - |
+| InlineArray200       |     139.385 ns |     3.9322 ns |     5.2494 ns |         - |
+| InlineArray300       |     140.539 ns |     3.8954 ns |     5.2003 ns |         - |
+| InlineArray400       |     182.018 ns |     3.6485 ns |     4.8706 ns |         - |
+| InlineArray500       |     227.787 ns |     4.1843 ns |     5.5859 ns |         - |
+| InlineArray600       |     269.726 ns |     4.9361 ns |     6.2426 ns |         - |
+| InlineArray700       |     312.608 ns |     7.8944 ns |    10.2650 ns |         - |
+| InlineArray800       |     353.253 ns |     8.6443 ns |    11.5399 ns |         - |
+| InlineArray900       |     398.750 ns |     8.2336 ns |    10.9916 ns |         - |
+| InlineArray1000      |     441.683 ns |     7.6390 ns |    10.1978 ns |         - |
+| InlineArray2000      |     876.992 ns |    23.8073 ns |    31.7821 ns |         - |
+| InlineArray3000      |   1,323.691 ns |    38.7690 ns |    51.7554 ns |         - |
+| InlineArray4000      |   1,724.525 ns |    37.7545 ns |    50.4012 ns |         - |
+| InlineArray5000      |   2,189.727 ns |    72.9563 ns |    97.3946 ns |         - |
+| InlineArray6000      |   2,574.688 ns |    73.1552 ns |    97.6601 ns |         - |
+| InlineArray7000      |   3,046.769 ns |    96.1616 ns |   128.3729 ns |         - |
+| InlineArray8000      |   3,469.404 ns |    60.6636 ns |    80.9841 ns |         - |
+| InlineArray9000      |   3,858.663 ns |    78.3593 ns |    93.2811 ns |         - |
+| InlineArray10000     |   4,251.302 ns |    88.4188 ns |   111.8215 ns |         - |
+| InlineArray20000     |   8,527.706 ns |   223.1929 ns |   297.9561 ns |         - |
+| InlineArray30000     |  13,007.932 ns |   394.3051 ns |   526.3860 ns |         - |
+| InlineArray40000     |  17,491.506 ns |   473.1212 ns |   631.6032 ns |         - |
+| InlineArray50000     |  21,713.746 ns |   433.2474 ns |   547.9193 ns |         - |
+| InlineArray60000     |  26,225.744 ns |   524.9067 ns |   700.7353 ns |         - |
+| InlineArray70000     |  30,147.286 ns |   598.8949 ns |   799.5074 ns |         - |
+| InlineArray80000     |  34,951.670 ns |   850.7738 ns | 1,135.7586 ns |         - |
+| InlineArray90000     |  39,688.233 ns | 1,223.9449 ns | 1,633.9313 ns |         - |
+| InlineArray100_000   |  43,550.147 ns | 1,252.0127 ns | 1,671.4010 ns |         - |
+| InlineArray200000    |  89,590.888 ns | 2,709.6316 ns | 3,617.2803 ns |         - |
+| InlineArray300000    | 136,869.152 ns | 3,879.5178 ns | 5,179.0448 ns |         - |
+| InlineArray400000    |             NA |            NA |            NA |        NA |
+| InlineArray500000    |             NA |            NA |            NA |        NA |
+| InlineArray600000    |             NA |            NA |            NA |        NA |
+| InlineArray700000    |             NA |            NA |            NA |        NA |
+| InlineArray800000    |             NA |            NA |            NA |        NA |
+| InlineArray900000    |             NA |            NA |            NA |        NA |
+| InlineArray1_000_000 |             NA |            NA |            NA |        NA |
+
+Benchmarks with issues:
+  BenchmarkInlineArray.InlineArray400000: Job-FGEYFK(IterationCount=25)
+  BenchmarkInlineArray.InlineArray500000: Job-FGEYFK(IterationCount=25)
+  BenchmarkInlineArray.InlineArray600000: Job-FGEYFK(IterationCount=25)
+  BenchmarkInlineArray.InlineArray700000: Job-FGEYFK(IterationCount=25)
+  BenchmarkInlineArray.InlineArray800000: Job-FGEYFK(IterationCount=25)
+  BenchmarkInlineArray.InlineArray900000: Job-FGEYFK(IterationCount=25)
+  BenchmarkInlineArray.InlineArray1_000_000: Job-FGEYFK(IterationCount=25)
+
+// * Warnings *
+Environment
+  Summary -> Detected error exit code from one of the benchmarks. It might be caused by following antivirus software:
+        - Windows Defender (windowsdefender://)
+Use InProcessEmitToolchain or InProcessNoEmitToolchain to avoid new process creation.
+
+MultimodalDistribution
+  BenchmarkInlineArray.InlineArray800: IterationCount=25    -> It seems that the distribution can have several modes (mValue = 3.2)
+  BenchmarkInlineArray.InlineArray3000: IterationCount=25   -> It seems that the distribution can have several modes (mValue = 3.09)
+  BenchmarkInlineArray.InlineArray90000: IterationCount=25  -> It seems that the distribution can have several modes (mValue = 2.86)
+  BenchmarkInlineArray.InlineArray300000: IterationCount=25 -> It seems that the distribution is bimodal (mValue = 3.33)
+
+// * Hints *
+Outliers
+  BenchmarkInlineArray.InlineArray20: IterationCount=25    -> 1 outlier  was  removed (29.22 ns)
+  BenchmarkInlineArray.InlineArray30: IterationCount=25    -> 1 outlier  was  removed (13.42 ns)
+  BenchmarkInlineArray.InlineArray40: IterationCount=25    -> 1 outlier  was  removed (41.92 ns)
+  BenchmarkInlineArray.InlineArray50: IterationCount=25    -> 3 outliers were removed (32.16 ns..32.82 ns)
+  BenchmarkInlineArray.InlineArray80: IterationCount=25    -> 1 outlier  was  removed (51.19 ns)
+  BenchmarkInlineArray.InlineArray100: IterationCount=25   -> 3 outliers were removed (61.96 ns..64.29 ns)
+  BenchmarkInlineArray.InlineArray600: IterationCount=25   -> 2 outliers were removed (300.95 ns, 301.37 ns)
+  BenchmarkInlineArray.InlineArray700: IterationCount=25   -> 1 outlier  was  removed (343.06 ns)
+  BenchmarkInlineArray.InlineArray9000: IterationCount=25  -> 4 outliers were removed (4.12 μs..4.18 μs)
+  BenchmarkInlineArray.InlineArray10000: IterationCount=25 -> 2 outliers were removed (4.61 μs, 4.62 μs)
+  BenchmarkInlineArray.InlineArray50000: IterationCount=25 -> 2 outliers were removed, 3 outliers were detected (20.53 μs, 22.99 μs, 22.99 μs)
+
+// * Legends *
+  Mean      : Arithmetic mean of all measurements
+  Error     : Half of 99.9% confidence interval
+  StdDev    : Standard deviation of all measurements
+  Allocated : Allocated memory per single operation (managed only, inclusive, 1KB = 1024B)
+  1 ns      : 1 Nanosecond (0.000000001 sec)
+
+// * Diagnostic Output - MemoryDiagnoser *
+
+
+// ***** BenchmarkRunner: End *****
+Run time: 00:18:02 (1082.79 sec), executed benchmarks: 46
+
+Global total time: 00:18:27 (1107.19 sec), executed benchmarks: 46
+// * Artifacts cleanup *
+Artifacts cleanup is finished
